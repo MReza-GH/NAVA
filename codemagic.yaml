@@ -9,129 +9,45 @@ workflows:
       java: 17
 
     scripts:
-      - name: Detect Android project and Gradle version
+      - name: Download Gradle and build APK
         script: |
           set -eu
 
-          SETTINGS_FILE="$(find "$CM_BUILD_DIR" \
-            -type f \( -name 'settings.gradle.kts' -o -name 'settings.gradle' \) \
-            -not -path '*/.git/*' \
-            -not -path '*/.gradle/*' \
-            -print -quit)"
+          SETTINGS_FILE="$(find "$CM_BUILD_DIR" -type f \( -name "settings.gradle.kts" -o -name "settings.gradle" \) -not -path "*/.git/*" -not -path "*/build/*" -print -quit)"
 
           if [ -z "$SETTINGS_FILE" ]; then
-            echo "ERROR: No Gradle settings file found."
+            echo "ERROR: Gradle settings file not found."
             exit 1
           fi
 
           PROJECT_DIR="$(dirname "$SETTINGS_FILE")"
-          cd "$PROJECT_DIR"
-
           echo "Project directory: $PROJECT_DIR"
+
+          cd "$PROJECT_DIR"
           echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
 
-          if ! AGP_VERSION="$(python3 - <<'PY'
-          import re
-          from pathlib import Path
+          GRADLE_VERSION=""
 
-          skip = {".git", ".gradle", "build", "outputs"}
-          files = []
+          PROPS="gradle/wrapper/gradle-wrapper.properties"
 
-          for p in Path(".").rglob("*"):
-              if not p.is_file():
-                  continue
-              if any(part in skip for part in p.parts):
-                  continue
-              if p.name.endswith((".gradle", ".gradle.kts", ".toml")):
-                  files.append(p)
-
-          patterns = [
-              re.compile(
-                  r'com\.android\.tools\.build:gradle:'
-                  r'(\d+\.\d+(?:\.\d+)?)'
-              ),
-              re.compile(
-                  r'com\.android\.application.{0,100}?version\s*'
-                  r'["\'](\d+\.\d+(?:\.\d+)?)',
-                  re.S
-              ),
-              re.compile(
-                  r'(?m)^\s*agp\s*=\s*'
-                  r'["\'](\d+\.\d+(?:\.\d+)?)["\']'
-              ),
-          ]
-
-          for p in sorted(files):
-              text = p.read_text(errors="ignore")
-              for pattern in patterns:
-                  match = pattern.search(text)
-                  if match:
-                      print(match.group(1))
-                      raise SystemExit(0)
-
-          raise SystemExit(1)
-          PY
-          )"; then
-            echo "ERROR: Could not detect the Android Gradle Plugin version."
-            echo "Inspect root build.gradle.kts and gradle/libs.versions.toml."
-            exit 1
+          if [ -f "$PROPS" ]; then
+            DIST_URL="$(sed -n 's/^distributionUrl=//p' "$PROPS" | tail -n 1)"
+            GRADLE_VERSION="$(printf '%s\n' "$DIST_URL" | sed -nE 's#.*gradle-([0-9]+(\.[0-9]+)+)-(bin|all)\.zip.*#\1#p')"
           fi
 
-          echo "Android Gradle Plugin: $AGP_VERSION"
+          if [ -z "$GRADLE_VERSION" ]; then
+            GRADLE_VERSION="8.13"
+            echo "Gradle wrapper properties unavailable; using fallback Gradle $GRADLE_VERSION"
+          fi
 
-          GRADLE_VERSION="$(python3 - "$AGP_VERSION" <<'PY'
-          import sys
-
-          version = sys.argv[1]
-          major_minor = ".".join(version.split(".")[:2])
-
-          compatible = {
-              "9.4": "9.6.0",
-              "9.3": "9.5.0",
-              "9.2": "9.4.1",
-              "9.1": "9.3.1",
-              "9.0": "9.1.0",
-              "8.13": "8.13",
-              "8.12": "8.13",
-              "8.11": "8.13",
-              "8.10": "8.11.1",
-              "8.9": "8.11.1",
-              "8.8": "8.10.2",
-              "8.7": "8.9",
-              "8.6": "8.7",
-              "8.5": "8.7",
-              "8.4": "8.6",
-              "8.3": "8.4",
-              "8.2": "8.2",
-              "8.1": "8.0",
-              "8.0": "8.0",
-              "7.4": "7.5",
-              "7.3": "7.4",
-              "7.2": "7.3.3",
-              "7.1": "7.2",
-              "7.0": "7.0",
-          }
-
-          result = compatible.get(major_minor)
-          if not result:
-              print(
-                  f"Unsupported automatic version mapping for AGP {version}",
-                  file=sys.stderr
-              )
-              raise SystemExit(1)
-
-          print(result)
-          PY
-          )"
-
-          echo "Selected Gradle version: $GRADLE_VERSION"
+          echo "Using Gradle version: $GRADLE_VERSION"
 
           TEMP_DIR="$(mktemp -d)"
           trap 'rm -rf "$TEMP_DIR"' EXIT
 
-          curl --fail --location --retry 3 \
+          curl --fail --location --retry 3 --silent --show-error \
             "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" \
-            -o "$TEMP_DIR/gradle.zip"
+            --output "$TEMP_DIR/gradle.zip"
 
           unzip -q "$TEMP_DIR/gradle.zip" -d "$TEMP_DIR"
 
