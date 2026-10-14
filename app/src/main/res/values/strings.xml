@@ -1,0 +1,129 @@
+<resources>
+    <string name="app_name">نوا</string>
+    <string name="app_name_en">Nava</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">خانه</string>
+    <string name="nav_online">آنلاین</string>
+    <string name="nav_library">کتابخانه</string>
+    <string name="nav_downloads">دانلودها</string>
+    <string name="nav_settings">تنظیمات</string>
+
+    <!-- Player Controls -->
+    <string name="play">پخش</string>
+    <string name="pause">توقف</string>
+    <string name="next">آهنگ بعدی</string>
+    <string name="previous">آهنگ قبلی</string>
+    <string name="shuffle">پخش تصادفی</string>
+    <string name="shuffle_on">پخش تصادفی فعال</string>
+    <string name="shuffle_off">پخش تصادفی غیرفعال</string>
+    <string name="repeat">تکرار</string>
+    <string name="repeat_off">بدون تکرار</string>
+    <string name="repeat_all">تکرار همه</string>
+    <string name="repeat_one">تکرار یک آهنگ</string>
+    <string name="queue">صف پخش</string>
+    <string name="add_to_favorites">افزودن به علاقه‌مندی‌ها</string>
+    <string name="remove_from_favorites">حذف از علاقه‌مندی‌ها</string>
+    <string name="now_playing">در حال پخش</string>
+    <string name="unknown_track">آهنگ نامشخص</string>
+    <string name="unknown_artist">هنرمند نامشخص</string>
+    <string name="unknown_album">آلبوم نامشخص</string>
+    <string name="seek_bar">نوار پیشرفت</string>
+    <string name="track_artwork">تصویر جلد آهنگ</string>
+    <string name="close">بستن</string>
+    <string name="more_options">گزینه‌های بیشتر</string>
+
+    <!-- Home -->
+    <string name="greeting_welcome">خوش آمدید به نوا</string>
+    <string name="recently_played">اخیراً پخش شده</string>
+    <string name="favorite_tracks">آهنگ‌های محبوب</string>
+    <string name="recently_added">تازه‌های دستگاه</string>
+    <string name="featured_online">پیشنهادهای آنلاین Jamendo</string>
+    <string name="no_recently_played">هنوز آهنگی پخش نشده است</string>
+    <string name="view_all">مشاهده همه</string>
+    <string name="quick_play">پخش سریع</string>
+
+    <!-- Online -->
+    <string name="search_placeholder">جستجوی آهنگ، هنرمند یا آلبوم…</string>
+    <string name="popular_tracks">محبوب‌ترین‌های این هفته</string>
+    <string name="search_results">نتایج جستجو</string>
+    <string name="no_results_found">هیچ نتیجه‌ای یافت نشد</string>
+    <string name="online_error">خطا در برقراری ارتباط با سرویس آنلاین</string>
+    <string name="retry">تلاش مجدد</string>
+    <string name="license_label">مجوز کپی‌رایت:</string>
+    <string name="download_permitted">دانلود مجاز است</string>
+    <string name="download_not_permitted">دانلود توسط پدیدآورنده محدود شده</string>
+    <string name="download_track">دانلود برای پخش آفلاین</string>
+    <string name="downloading">در حال دانلود…</string>
+    <string name="download_success">با موفقیت ذخیره شد</string>
+    <string name="api_key_missing_title">تنظیم کلید Jamendo API</string>
+    <string name="api_key_missing_desc">برای جستجو و پخش مستقیم از کاتالوگ Jamendo، شناسه کلاینت (Client ID) را در تنظیمات وارد نمایید یا از کلید آزمایشی استفاده کنید.</string>
+    <string name="setup_api_key">تنظیم کلید در برنامه</string>
+    <string name="use_demo_catalog">استفاده از کلاینت عمومی Jamendo</string>
+
+    <!-- Library -->
+    <string name="tab_tracks">آهنگ‌ها</string>
+    <string name="tab_artists">هنرمندان</string>
+    <string name="tab_albums">آلبوم‌ها</string>
+    <string name="tab_playlists">پلی‌لیست‌ها</string>
+    <string name="tab_folders">پوشه‌ها</string>
+    <string name="scan_device_library">اسکن حافظه دستگاه</string>
+    <string name="scanning_library">در حال جستجوی فایل‌های صوتی…</string>
+    <string name="pick_files_manually">انتخاب فایل از پوشه دلخواه</string>
+    <string name="permission_needed_title">دسترسی به فایل‌های صوتی</string>
+    <string name="permission_needed_desc">برای نمایش خودکار آهنگ‌های ذخیره‌شده روی گوشی، به دسترسی فایل‌های صوتی نیاز است. در صورت تمایل می‌توانید فایل‌ها را دستی نیز انتخاب کنید.</string>
+    <string name="grant_permission">اعطای مجوز</string>
+    <string name="empty_library">کتابخانه شما خالی است</string>
+    <string name="empty_library_desc">آهنگ‌های دستگاه را اسکن کنید یا از طریق انتخاب‌گر فایل به نوا اضافه نمایید.</string>
+    <string name="create_playlist">ایجاد پلی‌لیست جدید</string>
+    <string name="playlist_name">نام پلی‌لیست</string>
+    <string name="cancel">انصراف</string>
+    <string name="confirm">تأیید</string>
+    <string name="delete">حذف</string>
+    <string name="rename">تغییر نام</string>
+    <string name="delete_playlist">حذف پلی‌لیست</string>
+    <string name="delete_playlist_confirm">آیا از حذف این پلی‌لیست اطمینان دارید؟</string>
+    <string name="add_to_playlist">افزودن به پلی‌لیست</string>
+    <string name="added_to_playlist">به پلی‌لیست اضافه شد</string>
+    <string name="no_playlists">هنوز پلی‌لیستی ایجاد نکرده‌اید</string>
+    <string name="no_favorites">هنوز هیچ آهنگی به علاقه‌مندی‌ها اضافه نشده است</string>
+    <string name="songs_count">%1$d آهنگ</string>
+    <string name="items_count">%1$d مورد</string>
+
+    <!-- Downloads -->
+    <string name="downloaded_tracks">آهنگ‌های دانلود شده</string>
+    <string name="no_downloads">فایل دانلودی وجود ندارد</string>
+    <string name="no_downloads_desc">آهنگ‌های مجاز در بخش آنلاین را دانلود کنید تا در حالت آفلاین به آن‌ها گوش دهید.</string>
+    <string name="delete_download">حذف فایل دانلود شده</string>
+    <string name="delete_download_confirm">آیا این آهنگ از حافظه دستگاه پاک شود؟</string>
+    <string name="download_in_progress">در حال دریافت فایل…</string>
+
+    <!-- Settings -->
+    <string name="settings_title">تنظیمات</string>
+    <string name="appearance_section">ظاهر برنامه</string>
+    <string name="theme_mode">پوسته</string>
+    <string name="theme_dark">تاریک (پیش‌فرض)</string>
+    <string name="theme_light">روشن</string>
+    <string name="theme_system">هماهنگ با سیستم</string>
+    <string name="language_section">زبان برنامه (Language)</string>
+    <string name="language_farsi">فارسی (پیش‌فرض - راست‌به‌چپ)</string>
+    <string name="language_english">English (Left-to-Right)</string>
+    <string name="library_section">مدیریت کتابخانه محلی</string>
+    <string name="rescan_library">اسکن مجدد فایل‌های صوتی</string>
+    <string name="rescan_library_desc">به‌روزرسانی خودکار لیست آهنگ‌ها از حافظه دستگاه</string>
+    <string name="online_service_section">سرویس آنلاین Jamendo</string>
+    <string name="jamendo_client_id_label">شناسه کلاینت Jamendo (Client ID)</string>
+    <string name="jamendo_save_btn">ذخیره شناسه</string>
+    <string name="jamendo_guide_text">شناسه کلاینت رسمی Jamendo برای دسترسی نامحدود به کاتالوگ مجاز موسیقی است. می‌توانید به صورت رایگان از developer.jamendo.com دریافت کنید.</string>
+    <string name="about_section">درباره نوا (Nava)</string>
+    <string name="about_desc">نوا، پخش‌کننده موسیقی مدرن و بومی اندروید با پشتیبانی کامل از فایل‌های آفلاین، استریم قانونی آنلاین و مدیریت دانلودها.</string>
+    <string name="app_version">نسخه ۱.۰.۰</string>
+
+    <!-- Queue & Misc -->
+    <string name="playback_queue">صف پخش کنونی</string>
+    <string name="clear_queue">پاکسازی صف</string>
+    <string name="tracks_in_queue">%1$d آهنگ در صف</string>
+    <string name="toast_file_imported">آهنگ با موفقیت اضافه شد</string>
+    <string name="toast_scan_finished">اسکن فایل‌ها به پایان رسید</string>
+    <string name="toast_download_started">دانلود آغاز شد</string>
+</resources>

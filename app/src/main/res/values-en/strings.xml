@@ -1,0 +1,129 @@
+<resources>
+    <string name="app_name">Nava</string>
+    <string name="app_name_en">Nava</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_online">Online</string>
+    <string name="nav_library">Library</string>
+    <string name="nav_downloads">Downloads</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Player Controls -->
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="next">Next Track</string>
+    <string name="previous">Previous Track</string>
+    <string name="shuffle">Shuffle</string>
+    <string name="shuffle_on">Shuffle On</string>
+    <string name="shuffle_off">Shuffle Off</string>
+    <string name="repeat">Repeat</string>
+    <string name="repeat_off">Repeat Off</string>
+    <string name="repeat_all">Repeat All</string>
+    <string name="repeat_one">Repeat One</string>
+    <string name="queue">Playback Queue</string>
+    <string name="add_to_favorites">Add to Favorites</string>
+    <string name="remove_from_favorites">Remove from Favorites</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="unknown_track">Unknown Track</string>
+    <string name="unknown_artist">Unknown Artist</string>
+    <string name="unknown_album">Unknown Album</string>
+    <string name="seek_bar">Seek bar</string>
+    <string name="track_artwork">Album Artwork</string>
+    <string name="close">Close</string>
+    <string name="more_options">More Options</string>
+
+    <!-- Home -->
+    <string name="greeting_welcome">Welcome to Nava</string>
+    <string name="recently_played">Recently Played</string>
+    <string name="favorite_tracks">Favorite Tracks</string>
+    <string name="recently_added">Recently Added</string>
+    <string name="featured_online">Featured Jamendo Tracks</string>
+    <string name="no_recently_played">No tracks played yet</string>
+    <string name="view_all">View All</string>
+    <string name="quick_play">Quick Play</string>
+
+    <!-- Online -->
+    <string name="search_placeholder">Search songs, artists, or albums…</string>
+    <string name="popular_tracks">Popular Tracks This Week</string>
+    <string name="search_results">Search Results</string>
+    <string name="no_results_found">No results found</string>
+    <string name="online_error">Could not connect to online service</string>
+    <string name="retry">Retry</string>
+    <string name="license_label">License:</string>
+    <string name="download_permitted">Download Permitted</string>
+    <string name="download_not_permitted">Download restricted by creator</string>
+    <string name="download_track">Download for offline playback</string>
+    <string name="downloading">Downloading…</string>
+    <string name="download_success">Saved successfully</string>
+    <string name="api_key_missing_title">Jamendo API Configuration</string>
+    <string name="api_key_missing_desc">To search and stream directly from Jamendo, provide your Client ID in Settings or use public sandbox credentials.</string>
+    <string name="setup_api_key">Set Client ID</string>
+    <string name="use_demo_catalog">Use Public Jamendo Client</string>
+
+    <!-- Library -->
+    <string name="tab_tracks">Tracks</string>
+    <string name="tab_artists">Artists</string>
+    <string name="tab_albums">Albums</string>
+    <string name="tab_playlists">Playlists</string>
+    <string name="tab_folders">Folders</string>
+    <string name="scan_device_library">Scan Device Storage</string>
+    <string name="scanning_library">Scanning audio files…</string>
+    <string name="pick_files_manually">Pick Audio Files</string>
+    <string name="permission_needed_title">Audio Storage Permission</string>
+    <string name="permission_needed_desc">Nava needs permission to automatically detect audio files stored on your device. You can also manually pick individual audio files.</string>
+    <string name="grant_permission">Grant Permission</string>
+    <string name="empty_library">Your library is empty</string>
+    <string name="empty_library_desc">Scan device storage or choose files manually with the file picker.</string>
+    <string name="create_playlist">Create New Playlist</string>
+    <string name="playlist_name">Playlist Name</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="delete">Delete</string>
+    <string name="rename">Rename</string>
+    <string name="delete_playlist">Delete Playlist</string>
+    <string name="delete_playlist_confirm">Are you sure you want to delete this playlist?</string>
+    <string name="add_to_playlist">Add to Playlist</string>
+    <string name="added_to_playlist">Added to playlist</string>
+    <string name="no_playlists">No playlists created yet</string>
+    <string name="no_favorites">No favorites added yet</string>
+    <string name="songs_count">%1$d songs</string>
+    <string name="items_count">%1$d items</string>
+
+    <!-- Downloads -->
+    <string name="downloaded_tracks">Downloaded Tracks</string>
+    <string name="no_downloads">No downloaded files</string>
+    <string name="no_downloads_desc">Download permitted tracks from the Online section to play them offline.</string>
+    <string name="delete_download">Delete Downloaded File</string>
+    <string name="delete_download_confirm">Delete this audio file from device storage?</string>
+    <string name="download_in_progress">Downloading audio file…</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="appearance_section">Appearance</string>
+    <string name="theme_mode">Theme</string>
+    <string name="theme_dark">Dark (Default)</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_system">System</string>
+    <string name="language_section">Application Language</string>
+    <string name="language_farsi">Persian / فارسی (RTL)</string>
+    <string name="language_english">English (LTR)</string>
+    <string name="library_section">Local Music Library</string>
+    <string name="rescan_library">Rescan Audio Files</string>
+    <string name="rescan_library_desc">Refresh song list from device storage</string>
+    <string name="online_service_section">Jamendo Online Service</string>
+    <string name="jamendo_client_id_label">Jamendo Client ID</string>
+    <string name="jamendo_save_btn">Save Client ID</string>
+    <string name="jamendo_guide_text">Official Jamendo client ID allows discovering and streaming free licensed music. Register at developer.jamendo.com.</string>
+    <string name="about_section">About Nava</string>
+    <string name="about_desc">Nava is a modern native Android music player with full offline audio playback, online legal streaming, and download management.</string>
+    <string name="app_version">Version 1.0.0</string>
+
+    <!-- Queue & Misc -->
+    <string name="playback_queue">Playback Queue</string>
+    <string name="clear_queue">Clear Queue</string>
+    <string name="tracks_in_queue">%1$d songs in queue</string>
+    <string name="toast_file_imported">Song imported successfully</string>
+    <string name="toast_scan_finished">Scan complete</string>
+    <string name="toast_download_started">Download started</string>
+</resources>

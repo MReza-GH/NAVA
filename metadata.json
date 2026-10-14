@@ -1,0 +1,6 @@
+{
+  "name": "Nava",
+  "description": "Native Android music player with offline local library, background playback, and Jamendo streaming.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
