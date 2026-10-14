@@ -1,4 +1,3 @@
-
 workflows:
   android-debug:
     name: Build Nava Debug APK
@@ -6,15 +5,31 @@ workflows:
     instance_type: mac_mini_m2
 
     scripts:
-      - name: Set Android SDK location
+      - name: Locate and build Android project
         script: |
-          echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
+          echo "Searching for Gradle wrapper..."
 
-      - name: Make Gradle wrapper executable
-        script: chmod +x ./gradlew
+          WRAPPER="$(find . -maxdepth 6 -type f -name gradlew -print -quit)"
 
-      - name: Build Android APK
-        script: ./gradlew --no-daemon assembleDebug
+          if [ -z "$WRAPPER" ]; then
+            echo "ERROR: gradlew was not found."
+            echo "Project files:"
+            find . -maxdepth 4 -type f \
+              \( -name 'settings.gradle' \
+              -o -name 'settings.gradle.kts' \
+              -o -name 'gradlew' \) -print
+            exit 1
+          fi
+
+          PROJECT_DIR="$(dirname "$WRAPPER")"
+          echo "Android project directory: $PROJECT_DIR"
+
+          cd "$PROJECT_DIR"
+          chmod +x ./gradlew
+
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
+
+          ./gradlew --no-daemon assembleDebug
 
     artifacts:
       - "**/build/outputs/apk/debug/*.apk"
