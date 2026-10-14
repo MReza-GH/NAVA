@@ -25,6 +25,19 @@ workflows:
 
           cd "$PROJECT_DIR"
           echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
+          if [ ! -f "$PROJECT_DIR/debug.keystore" ]; then
+  echo "Generating temporary debug keystore..."
+
+  keytool -genkeypair -v \
+    -keystore "$PROJECT_DIR/debug.keystore" \
+    -storepass android \
+    -alias androiddebugkey \
+    -keypass android \
+    -keyalg RSA \
+    -keysize 2048 \
+    -validity 10000 \
+    -dname "CN=Android Debug,O=Android,C=US"
+fi
 
           GRADLE_VERSION=""
 
